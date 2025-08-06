@@ -82,8 +82,12 @@ header {
 
 /* ------------- ヒーローセクション ------------- */
 .hero {
-    /* ヒーローセクションは写真ではなくグラデーション背景を使用 */
-    background: linear-gradient(135deg, var(--primary-color), #005288);
+    /* 背景に都市の空撮写真を敷き、その上に暗いグラデーションを重ねる */
+    background:
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        url('hero.jpg');
+    background-size: cover;
+    background-position: center;
     color: var(--light-color);
     height: 60vh;
     display: flex;
