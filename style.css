@@ -1,0 +1,406 @@
+/*
+ * Stylesheet for 今野商会のドローンサービスサイト
+ *
+ * このCSSはサイト全体に統一感のあるデザインを与え、
+ * 各セクションを見やすく配置するためのレイアウトを定義します。
+ * 色やフォントサイズは変数としてまとめ、後で簡単に調整できるようにしています。
+ */
+
+/* ------------- CSSリセット ------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ------------- カスタムプロパティ ------------- */
+:root {
+    --primary-color: #0074D9;    /* コーポレートカラー：青 */
+    --secondary-color: #f5f7fa;  /* 背景色のライトトーン */
+    --accent-color: #FF8C00;     /* ボタンなどのアクセントカラー：オレンジ */
+    --dark-color: #333333;       /* テキストに使用する濃い色 */
+    --light-color: #ffffff;      /* 白色 */
+    --container-width: 90%;      /* コンテンツ領域の幅 */
+    --max-width: 1200px;         /* コンテンツ領域の最大幅 */
+    --shadow: 0 4px 12px rgba(0,0,0,0.1); /* カードの影 */
+    --border-radius: 8px;        /* 角丸の半径 */
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--dark-color);
+    line-height: 1.6;
+    background-color: var(--secondary-color);
+}
+
+/* 共通レイアウト */
+.container {
+    width: var(--container-width);
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 0.5rem;
+}
+
+/* ------------- ナビゲーション ------------- */
+header {
+    background-color: var(--light-color);
+    border-bottom: 1px solid #e5e5e5;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--dark-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* ------------- ヒーローセクション ------------- */
+.hero {
+    /* ヒーローセクションは写真ではなくグラデーション背景を使用 */
+    background: linear-gradient(135deg, var(--primary-color), #005288);
+    color: var(--light-color);
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--light-color);
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    /* CSSではdarken関数が使えないため、ホバー時の色を手動で調整 */
+    background-color: #e67700;
+}
+
+/* ------------- サービスセクション ------------- */
+#services {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+#services h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background-color: var(--light-color);
+    padding: 2rem 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.service-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* ------------- 料金セクション ------------- */
+#pricing {
+    background-color: var(--light-color);
+    padding: 3rem 0;
+}
+
+#pricing h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.pricing-note {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.pricing-card {
+    background-color: var(--secondary-color);
+    border: 1px solid #e0e0e0;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+}
+
+.pricing-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.pricing-card .price {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+}
+
+.pricing-card .unit {
+    font-size: 1rem;
+    color: var(--dark-color);
+}
+
+.pricing-card ul {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.pricing-card li {
+    padding-left: 1.2rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.pricing-card li::before {
+    content: "\f00c";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary-color);
+}
+
+/* ------------- 会社案内 ------------- */
+#about {
+    padding: 3rem 0;
+}
+
+#about h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+#about p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #444;
+}
+
+/* ------------- 選ばれる理由セクション ------------- */
+.why-us {
+    background-color: var(--light-color);
+    padding: 3rem 0;
+}
+
+.why-us h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.why-card {
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.why-card:hover {
+    transform: translateY(-5px);
+}
+
+.why-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.why-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.why-card p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* ------------- お問い合わせセクション ------------- */
+#contact {
+    background-color: var(--light-color);
+    padding: 3rem 0;
+}
+
+#contact h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+#contact p {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    color: #444;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-row input,
+.form-row textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 116, 217, 0.2);
+}
+
+.contact-info {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* ------------- フッター ------------- */
+footer {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+}
+
+/* ------------- レスポンシブ対応 ------------- */
+@media (min-width: 600px) {
+    .form-row {
+        flex-direction: row;
+    }
+    .form-row input {
+        flex: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+    .nav-links {
+        gap: 1rem;
+    }
+}
