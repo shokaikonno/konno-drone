@@ -160,7 +160,8 @@
         <div class="container">
             <h2>お問い合わせ</h2>
             <p>ご相談・お見積もりは無料です。お気軽に下記フォームよりご連絡ください。</p>
-            <form class="contact-form" onsubmit="return false;">
+            <!-- 問い合わせフォームはメール送信できるように mailto を設定 -->
+            <form class="contact-form" action="mailto:takato@konnoshokai.co.jp" method="POST" enctype="text/plain">
                 <div class="form-row">
                     <input type="text" placeholder="お名前" required>
                     <input type="email" placeholder="メールアドレス" required>
@@ -170,7 +171,8 @@
                 </div>
                 <button type="submit" class="btn-primary">送信する</button>
             </form>
-            <p class="contact-info">電話：000-0000-0000　メール：info@example.com<br>所在地：埼玉県さいたま市</p>
+            <!-- 会社連絡先を更新 --><!-- 電話番号やメールアドレスは実際に運用する際に修正してください -->
+            <p class="contact-info">電話：000-0000-0000　メール：takato@konnoshokai.co.jp<br>所在地：埼玉県さいたま市</p>
         </div>
     </section>
 
