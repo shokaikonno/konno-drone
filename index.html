@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今野商会 | ドローンサービス</title>
+    <!-- Google Fonts for Japanese text -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-38v7slkvqNkxd4x81mFncraEw9jMZEvdfFFO3uDwkB7hxOHklODp+9RNRZfOkFHmUCREm1XQIJz70XFAcNfRXQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="container nav">
+            <div class="logo">今野商会</div>
+            <ul class="nav-links">
+                <li><a href="#services">サービス</a></li>
+                <li><a href="#pricing">料金</a></li>
+                <li><a href="#about">会社案内</a></li>
+                <li><a href="#contact">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content container">
+            <h1>ドローンで未来を拓く</h1>
+            <p>測量・空撮・農薬散布・点検 – 専門技術で地域の課題を解決します。</p>
+            <a href="#contact" class="btn-primary">お問い合わせ</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services container">
+        <h2>サービス</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <h3>測量・地図作成</h3>
+                <p>最新のドローンと高精度測量ソフトを活用し、2D/3D図面や点群データを作成します。従来より短時間で現場を把握できます。</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-camera-retro"></i>
+                <h3>空撮・映像制作</h3>
+                <p>建築物やイベント、企業プロモーションなどを高品質に撮影。写真・動画・編集までワンストップで対応します。</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-seedling"></i>
+                <h3>農薬散布</h3>
+                <p>水稲や麦・野菜など多様な作物に対応。熟練オペレーターが安全に散布し、省力化と高い防除効果を実現します。</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-building"></i>
+                <h3>点検・調査</h3>
+                <p>屋根や外壁、橋梁などの点検をドローンで効率的に実施。赤外線カメラにも対応し、異常箇所を迅速に発見します。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2>料金プラン</h2>
+            <p class="pricing-note">※表示価格は目安です。案件の内容や場所により変動します。出張費・交通費等は別途ご相談ください。</p>
+            <div class="pricing-grid">
+                <!-- Photo plan -->
+                <div class="pricing-card">
+                    <h3>写真撮影プラン</h3>
+                    <!-- 一般的な相場に合わせた価格設定 -->
+                    <p class="price">40,000円〜</p>
+                    <ul>
+                        <li>写真撮影 1時間</li>
+                        <li>20枚まで補正・納品</li>
+                        <li>賠償責任保険込み</li>
+                    </ul>
+                </div>
+                <!-- Video plan -->
+                <div class="pricing-card">
+                    <h3>映像撮影プラン</h3>
+                    <!-- 動画撮影の相場に合わせた価格設定 -->
+                    <p class="price">80,000円〜</p>
+                    <ul>
+                        <li>映像撮影 1時間</li>
+                        <li>3分程度の編集動画</li>
+                        <li>撮影許可取得サポート</li>
+                    </ul>
+                </div>
+                <!-- Survey plan -->
+                <div class="pricing-card">
+                    <h3>測量プラン</h3>
+                    <!-- 測量は15万〜300万円程度の相場に合わせ、基本料金を引き下げ -->
+                    <p class="price">150,000円〜</p>
+                    <ul>
+                        <li>オルソ画像・点群データ作成</li>
+                        <li>面積・体積計算</li>
+                        <li>広範囲の現場に対応</li>
+                    </ul>
+                </div>
+                <!-- Spraying plan -->
+                <div class="pricing-card">
+                    <h3>農薬散布</h3>
+                    <!-- 1反あたり2,000円という相場に合わせて設定 -->
+                    <p class="price">2,000円<span class="unit">/10a</span></p>
+                    <ul>
+                        <li>液剤・粒剤同料金</li>
+                        <li>機体・操縦者 2名体制</li>
+                        <li>10ha以上で割引あり</li>
+                    </ul>
+                </div>
+                <!-- Inspection plan -->
+                <div class="pricing-card">
+                    <h3>点検プラン</h3>
+                    <!-- 屋根・外壁点検の相場に合わせた料金へ変更 -->
+                    <p class="price">40,000円〜</p>
+                    <ul>
+                        <li>屋根点検：40,000円〜</li>
+                        <li>外壁点検：150,000円〜</li>
+                        <li>赤外線カメラ対応：追加20,000円〜</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about container">
+        <h2>会社案内</h2>
+        <p>今野商会は、埼玉県を拠点にドローンを活用した各種サービスを提供しています。測量・空撮・農薬散布・建物点検の専門技術と豊富な経験を活かし、地域のインフラ整備や農業支援、企業PRに貢献しています。安全・品質・法令遵守を第一に、お客様のニーズに合わせた柔軟な提案を行います。</p>
+        <p>2025年時点で、ドローン撮影の費用相場は写真撮影が3〜4万円、動画撮影が7〜9万円、土地測量が15〜300万円程度と言われています。屋根点検は1万〜5万円程度、外壁点検は10万〜30万円程度が一般的です。農薬散布は1反（10a）あたり約2,000円、ドローン調査・点検では60分撮影で2.5万円ほどが目安となっており、用途に応じたさまざまな料金設定が存在します。今野商会では、こうした一般的な相場を参考にしつつ、専門性の高さと丁寧な対応に見合った価格を設定し、お客様に確かな価値を提供します。</p>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-us">
+        <div class="container">
+            <h2>選ばれる理由</h2>
+            <div class="why-grid">
+                <div class="why-card">
+                    <i class="fa-solid fa-user-tie"></i>
+                    <h3>専門性と経験</h3>
+                    <p>国家資格を有するオペレーターと測量士が在籍し、複雑な現場でも高品質な成果物を提供します。</p>
+                </div>
+                <div class="why-card">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3>安全へのこだわり</h3>
+                    <p>万全の保険加入と事前リスク評価を行い、安全に配慮した飛行計画で安心してご依頼いただけます。</p>
+                </div>
+                <div class="why-card">
+                    <i class="fa-solid fa-clock"></i>
+                    <h3>迅速な対応</h3>
+                    <p>予約から納品までワンストップ。緊急対応や大規模案件にも柔軟に対応します。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>お問い合わせ</h2>
+            <p>ご相談・お見積もりは無料です。お気軽に下記フォームよりご連絡ください。</p>
+            <form class="contact-form" onsubmit="return false;">
+                <div class="form-row">
+                    <input type="text" placeholder="お名前" required>
+                    <input type="email" placeholder="メールアドレス" required>
+                </div>
+                <div class="form-row">
+                    <textarea placeholder="ご依頼内容・ご質問" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">送信する</button>
+            </form>
+            <p class="contact-info">電話：000-0000-0000　メール：info@example.com<br>所在地：埼玉県さいたま市</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 今野商会. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
