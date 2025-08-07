@@ -160,19 +160,19 @@
         <div class="container">
             <h2>お問い合わせ</h2>
             <p>ご相談・お見積もりは無料です。お気軽に下記フォームよりご連絡ください。</p>
-            <!-- 問い合わせフォームはメール送信できるように mailto を設定 -->
-            <form class="contact-form" action="mailto:takato@konnoshokai.co.jp" method="POST" enctype="text/plain">
+            <!-- 連絡フォーム：JSで mailto リンクを生成し、入力した内容をメール本文に埋め込みます -->
+            <form id="contactForm" class="contact-form">
                 <div class="form-row">
-                    <input type="text" placeholder="お名前" required>
-                    <input type="email" placeholder="メールアドレス" required>
+                    <input type="text" id="name" name="name" placeholder="お名前" required>
+                    <input type="email" id="email" name="email" placeholder="メールアドレス" required>
                 </div>
                 <div class="form-row">
-                    <textarea placeholder="ご依頼内容・ご質問" rows="5" required></textarea>
+                    <textarea id="message" name="message" placeholder="ご依頼内容・ご質問" rows="5" required></textarea>
                 </div>
                 <button type="submit" class="btn-primary">送信する</button>
             </form>
             <!-- 会社連絡先を更新 --><!-- 電話番号やメールアドレスは実際に運用する際に修正してください -->
-            <p class="contact-info">メール：takato@konnoshokai.co.jp<br>所在地：埼玉県熊谷市上之312-2</p>
+            <p class="contact-info">電話：000-0000-0000　メール：takato@konnoshokai.co.jp<br>所在地：埼玉県さいたま市</p>
         </div>
     </section>
 
@@ -181,5 +181,24 @@
             <p>&copy; 2025 今野商会. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <!-- JavaScript to handle contact form submission and compose a pre-filled email -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('contactForm');
+        if (form) {
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const name = encodeURIComponent(document.getElementById('name').value);
+                const email = encodeURIComponent(document.getElementById('email').value);
+                const message = encodeURIComponent(document.getElementById('message').value);
+                const subject = encodeURIComponent('お問い合わせ from ' + decodeURIComponent(name));
+                const body = encodeURIComponent('お名前: ' + decodeURIComponent(name) + '\nメールアドレス: ' + decodeURIComponent(email) + '\n\n' + decodeURIComponent(message));
+                // Create mailto link with subject and body encoded
+                window.location.href = `mailto:takato@konnoshokai.co.jp?subject=${subject}&body=${body}`;
+            });
+        }
+    });
+    </script>
 </body>
 </html>

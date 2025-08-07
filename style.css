@@ -85,7 +85,7 @@ header {
     /* 背景に都市の空撮写真を敷き、その上に暗いグラデーションを重ねる */
     background:
         linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-        url('hero.jpg');
+        url('hero-sunny.jpg');
     background-size: cover;
     background-position: center;
     color: var(--light-color);
