@@ -182,20 +182,26 @@
         </div>
     </footer>
 
-    <!-- JavaScript to handle contact form submission and compose a pre-filled email -->
+    <!-- JavaScript to handle contact form submission and compose a pre-filled email. 
+         This version avoids double encoding and uses simple newline characters for better compatibility. -->
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         const form = document.getElementById('contactForm');
         if (form) {
             form.addEventListener('submit', function(event) {
                 event.preventDefault();
-                const name = encodeURIComponent(document.getElementById('name').value);
-                const email = encodeURIComponent(document.getElementById('email').value);
-                const message = encodeURIComponent(document.getElementById('message').value);
-                const subject = encodeURIComponent('お問い合わせ from ' + decodeURIComponent(name));
-                const body = encodeURIComponent('お名前: ' + decodeURIComponent(name) + '\nメールアドレス: ' + decodeURIComponent(email) + '\n\n' + decodeURIComponent(message));
-                // Create mailto link with subject and body encoded
-                window.location.href = `mailto:takato@konnoshokai.co.jp?subject=${subject}&body=${body}`;
+                // Retrieve raw input values
+                const nameValue = document.getElementById('name').value;
+                const emailValue = document.getElementById('email').value;
+                const messageValue = document.getElementById('message').value;
+                // Construct subject and body strings (unencoded)
+                const subject = `お問い合わせ from ${nameValue}`;
+                const body = `お名前: ${nameValue}\nメールアドレス: ${emailValue}\n\n${messageValue}`;
+                // Encode components for the mailto URI
+                const encodedSubject = encodeURIComponent(subject);
+                const encodedBody = encodeURIComponent(body);
+                // Redirect to a mailto link with pre-filled subject and body
+                window.location.href = `mailto:takato@konnoshokai.co.jp?subject=${encodedSubject}&body=${encodedBody}`;
             });
         }
     });
